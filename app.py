@@ -4,7 +4,7 @@ from datetime import date
 import random
 
 # הגדרות עמוד
-st.set_page_config(page_title="תאילנד 2026 - הספירה לאחור!", layout="centered")
+st.set_page_config(page_title="תאילנד 2026 - המדריך המלא", layout="centered")
 
 # עיצוב CSS
 st.markdown("""
@@ -14,117 +14,157 @@ st.markdown("""
     p, li { text-align: right; direction: rtl; font-size: 16px; }
     .countdown-container {
         background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
-        padding: 30px;
-        border-radius: 25px;
+        padding: 25px;
+        border-radius: 20px;
         text-align: center;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
         margin-bottom: 25px;
         direction: rtl;
         border: 2px dashed #008080;
     }
-    .countdown-number { font-size: 55px; color: #008080; font-weight: 900; display: block; line-height: 1; }
-    .funny-note { font-style: italic; color: #555; margin-top: 10px; font-size: 18px; }
-    .details-box {
-        background-color: #f0f7f9;
-        padding: 15px;
-        border-radius: 12px;
-        border-right: 6px solid #008080;
+    .section-header {
+        background-color: #008080;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 8px;
+        margin-top: 15px;
+        display: inline-block;
+    }
+    .info-card {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 15px;
+        border-right: 8px solid #008080;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         direction: rtl;
         text-align: right;
-        margin-bottom: 12px;
     }
     </style>
     """, unsafe_allow_html=True)
 
-# --- לוגיקה לספירה לאחור ומשפטים מצחיקים ---
+# --- ספירה לאחור ---
 target_date = date(2026, 5, 20)
-today = date.today()
-days_left = (target_date - today).days
-
-def get_funny_note(days):
-    if days > 100:
-        return random.choice([
-            "זה מרגיש רחוק כמו הקינוח הבא שלי, אבל זה יגיע!",
-            "זמן מצוין להתחיל להתאמן על אכילה עם מקלות.",
-            "בינתיים תמשיכו לחלום על שייק מנגו, זה בחינם.",
-            "אפשר כבר להתחיל לארוז? לא? אוקיי..."
-        ])
-    elif 30 < days <= 100:
-        return random.choice([
-            "זה הזמן לקנות קרם הגנה לפני שכולם נזכרים.",
-            "הודעה רשמית: המזוודה בבוידעם מתחילה להתרגש.",
-            "הקיבה שלכם כבר עושה הכנות נפשיות לאוכל חריף.",
-            "תתחילו להיפרד מהחולצות הארוכות, הן לא באות איתנו."
-        ])
-    elif 10 < days <= 30:
-        return random.choice([
-            "מתחילים לחפש את הדרכונים בלחץ? עכשיו זה זמן טוב.",
-            "זהו, רמת הריכוז בעבודה ירדה ל-0. אופסי.",
-            "עוד מעט מחליפים את המזגן של המשרד בלחות של פוקט!",
-            "האם כבר קניתם כפכפים חדשים או שאתם מחכים לרגע האחרון?"
-        ])
-    elif 0 < days <= 10:
-        return random.choice([
-            "זה לא תרגול! חוזר: זה לא תרגול! אורזים באמת!",
-            "מצב נפשי: כבר בתוך השייק מנגו.",
-            "מישהו ראה את המטען של המצלמה?!",
-            "תחזיקו מעמד, תאילנד כבר מריחה אתכם."
-        ])
-    elif days == 0:
-        return "✈️ יאללה למטוס! אל תשכחו את הילדות בטרמינל!"
-    else:
-        return "🏝️ אנחנו בתאילנד! נא לא להפריע, אני עסוק/ה בלהיות מאושר/ת."
-
-# הצגת הספירה לאחור
+days_left = (target_date - date.today()).days
 st.markdown(f"""
     <div class="countdown-container">
-        <span style="font-size: 20px; color: #666;">טבלת ייאוש (גרסת האקסטזה):</span>
-        <span class="countdown-number">{max(0, days_left)} ימים</span>
-        <p class="funny-note">"{get_funny_note(days_left)}"</p>
+        <span style="font-size: 40px; font-weight: 900; color: #008080;">{max(0, days_left)} ימים</span><br>
+        <span style="font-size: 18px;">עד שהדרכון מקבל חותמת של חופש! ✈️</span>
     </div>
 """, unsafe_allow_html=True)
 
-# --- נתוני הטיול ---
+# --- בסיס נתונים מורחב ---
 data = [
-    {"תאריך": "20/05", "מקום": "JW Marriott Khao Lak", "פעילות": "נחיתה, איסוף רכב וצפונה לגן עדן!", "כתובת": "41/12 Moo 3, Khuk Khak, Takuapa", "ניווט": "https://www.google.com/maps/search/?api=1&query=JW+Marriott+Khao+Lak+Resort", "פירוט": ""},
-    {"תאריך": "21/05", "מקום": "מפל Sai Rung", "פעילות": "מפל הקשת בענן - מרענן וקרוב.", "כתובת": "Khuekkhak, Takua Pa District", "ניווט": "https://www.google.com/maps/search/?api=1&query=Sai+Rung+Waterfall+Khao+Lak", "פירוט": ""},
-    {"תאריך": "22/05", "מקום": "מפל Ton Chong Fa", "פעילות": "ג'ונגל ובריכות שחייה.", "כתובת": "Takua Pa District, Phang-nga", "ניווט": "https://www.google.com/maps/search/?api=1&query=Ton+Chong+Fa+Waterfall", "פירוט": "כניסה כ-200 באט."},
-    {"תאריך": "23/05", "מקום": "La Flora & מרכז צבי הים", "פעילות": "צבים בבסיס חיל הים (להביא תעודה מזהה לשער!).", "כתובת": "Phang Nga Naval Base, Thai Mueang", "ניווט": "https://www.google.com/maps/search/?api=1&query=Sea+Turtle+Conservation+Center+Phang+Nga", "פירוט": ""},
-    {"תאריך": "24/05", "מקום": "Phang Nga Bay", "פעילות": "שייט קיאקים בלגונות (לא חותרים לבד, אל דאגה).", "כתובת": "Ao Phang Nga National Park", "ניווט": "https://www.google.com/maps/search/?api=1&query=Ao+Phang+Nga+National+Park+Pier", "פירוט": ""},
-    {"תאריך": "25/05", "מקום": "Moracea by Khao Lak", "פעילות": "מעבר למלון על הצוק בחוף Nang Thong.", "כתובת": "26/20 M.7, Khuk Khak", "ניווט": "https://www.google.com/maps/search/?api=1&query=Moracea+by+Khao+Lak+Resort", "פירוט": ""},
-    {"תאריך": "28/05", "מקום": "Khaolak Merlin Resort", "פעילות": "לילה בג'ונגל - לחפש את לטאות הכוח בחצר!", "כתובת": "7/7 Moo 2, Lam Kaen", "ניווט": "https://www.google.com/maps/search/?api=1&query=Khaolak+Merlin+Resort", "פירוט": ""},
-    {"תאריך": "29/05", "מקום": "Andamanda & Katathani", "פעילות": "פארק מים מטורף ומעבר לחוף קאטה נוי.", "כתובת": "14 Kata Noi Rd, Karon, Phuket", "ניווט": "https://www.google.com/maps/search/?api=1&query=Katathani+Phuket+Beach+Resort", "פירוט": ""},
-    {"תאריך": "30/05", "מקום": "שופינג ב-Central Phuket", "פעילות": "מרוקנים את הקניון וטסים הביתה ב-22:30.", "כתובת": "Vichitsongkram Rd, Phuket", "ניווט": "https://www.google.com/maps/search/?api=1&query=Central+Phuket+Floresta", "פירוט": "טיפ: תשאירו מקום במזוודה למציאות!"}
+    {
+        "תאריך": "20/05",
+        "מקום": "JW Marriott Khao Lak",
+        "פעילות": "נחיתה והתאקלמות",
+        "על המלון": "ריזורט 5 כוכבים מפואר עם הבריכה הארוכה ביותר בדרום מזרח אסיה (יותר מ-2 קילומטר של בריכה!). המלון מעוצב בסגנון תאילנדי קלאסי עם המון פינות חמד.",
+        "מה עושים": "אחרי הנחיתה ב-11:25 ואיסוף הרכב, ניסע צפונה לקאו לאק (כשעה ורבע נסיעה). היום מוקדש למנוחה, סיבוב בבריכה האינסופית של המלון וארוחת ערב ראשונה מול הים.",
+        "כתובת": "41/12 Moo 3, Khuk Khak, Takuapa",
+        "ניווט": "https://www.google.com/maps/search/?api=1&query=JW+Marriott+Khao+Lak+Resort"
+    },
+    {
+        "תאריך": "21/05",
+        "מקום": "מפל Sai Rung",
+        "פעילות": "מפל הקשת בענן",
+        "על המלון": "ממשיכים לילה שני ב-JW Marriott. מומלץ לנצל את ארוחת הבוקר המפורסמת שלהם.",
+        "מה עושים": "נסיעה קצרה של 10 דקות מהמלון למפל קליל ונגיש. המפל נופל לבריכה רדודה שאפשר להשתכשך בה. המקום מוקף בצמחייה טרופית ויש מסעדות קטנות בקרבת מקום לנשנוש צהריים.",
+        "כתובת": "Khuekkhak, Takua Pa District",
+        "ניווט": "https://www.google.com/maps/search/?api=1&query=Sai+Rung+Waterfall+Khao+Lak"
+    },
+    {
+        "תאריך": "22/05",
+        "מקום": "מפל Ton Chong Fa",
+        "פעילות": "טיול ג'ונגל ומפלים",
+        "על המלון": "לילה אחרון ב-JW Marriott - זמן טוב למסאז' במלון או בדוכנים שעל החוף.",
+        "מה עושים": "מפל מרשים בעל 5 מפלסים. המסלול עובר בתוך הג'ונגל. בדרגה הראשונה יש בריכה טבעית עם 'דגי פדיקור' שידגדגו לכם ברגליים. הליכה מעט יותר מאתגרת מהיום הקודם אבל מתאימה למשפחות.",
+        "כתובת": "Takua Pa District, Phang-nga",
+        "ניווט": "https://www.google.com/maps/search/?api=1&query=Ton+Chong+Fa+Waterfall"
+    },
+    {
+        "תאריך": "23/05",
+        "מקום": "La Flora Khao Lak",
+        "פעילות": "מרכז צבי הים וחוף באנג ניאנג",
+        "על המלון": "מלון מודרני במיקום מעולה בלב אזור באנג ניאנג. קרוב מאוד לשוק הלילה ולמסעדות. העיצוב נקי והבריכות גולשות לחוף.",
+        "מה עושים": "נוסעים לבסיס חיל הים (Thap Lamu) לבקר במרכז שיקום צבי הים. רואים צבים בכל הגדלים. אחר כך צ'ק-אין במלון החדש וסיבוב ערב בשוק הלילה של באנג ניאנג (שוק תוסס עם אוכל רחוב ומזכרות).",
+        "כתובת": "59/1 Moo 5, Khuk Khak",
+        "ניווט": "https://www.google.com/maps/search/?api=1&query=La+Flora+Khao+Lak"
+    },
+    {
+        "תאריך": "24/05",
+        "מקום": "Phang Nga Bay",
+        "פעילות": "שייט קיאקים במפרץ פאנג נגה",
+        "על המלון": "לילה שני ב-La Flora. מומלץ לצאת בערב למסעדות המעולות שנמצאות במרחק הליכה קצר מהמלון.",
+        "מה עושים": "יום שיא! שייט בין צוקי גיר ענקיים שיוצאים מהמים. נכנסים עם קיאקים (יש מדריך שחותר) לתוך מערות נטיפים ולגונות נסתרות. כולל ביקור ב'אי של ג'יימס בונד'. יום מלא בחוויות וצילומים.",
+        "כתובת": "Ao Phang Nga National Park",
+        "ניווט": "https://www.google.com/maps/search/?api=1&query=Ao+Phang+Nga+National+Park+Pier"
+    },
+    {
+        "תאריך": "25/05",
+        "מקום": "Moracea by Khao Lak",
+        "פעילות": "רוגע בחוף Nang Thong",
+        "על המלון": "מלון מרהיב הבנוי על צלע גבעה שיורדת עד לים. חדרים עם נוף פנורמי ואווירה רומנטית ושקטה יותר.",
+        "מה עושים": "מעבר לחוף 'החולות הזהובים'. זה יום להוריד הילוך, ליהנות מהשקיעות המטורפות של חוף נאנג ת'ונג, ולטייל בערב ברחוב הראשי של קאו לאק סנטר (קניות וברים).",
+        "כתובת": "26/20 M.7, Khuk Khak",
+        "ניווט": "https://www.google.com/maps/search/?api=1&query=Moracea+by+Khao+Lak+Resort"
+    },
+    {
+        "תאריך": "28/05",
+        "מקום": "Khaolak Merlin Resort",
+        "פעילות": "לינה בתוך שמורת טבע",
+        "על המלון": "חוויה ייחודית! המלון מרגיש כמו גן בוטני ענק. יש בו נחלים, עצים עתיקים וחיות בר (סנאים, לטאות כוח) שמסתובבות חופשי. ידידותי מאוד למשפחות.",
+        "מה עושים": "יום של 'ג'ונגל לייט'. נהנים מהמתקנים המדהימים של המלון, הבריכות שמשתלבות בטבע, ואולי טיול פילים (אתי) שנמצא בקרבת מקום.",
+        "כתובת": "7/7 Moo 2, Lam Kaen",
+        "ניווט": "https://www.google.com/maps/search/?api=1&query=Khaolak+Merlin+Resort"
+    },
+    {
+        "תאריך": "29/05",
+        "מקום": "Andamanda & Katathani",
+        "פעילות": "פארק מים ומעבר לפוקט",
+        "על המלון": "Katathani - ריזורט ענק על חוף Kata Noi המבודד. המלון הכי מבוקש למשפחות בזכות מתקני הילדים והקרבה לחוף שקט ונקי.",
+        "מה עושים": "מתחילים את הבוקר באקשן בפארק המים Andamanda (הכי גדול בפוקט!). משם נסיעה דרומה לצ'ק-אין ב-Katathani. בערב - ארוחה מול הגלים.",
+        "כתובת": "14 Kata Noi Rd, Karon, Phuket",
+        "ניווט": "https://www.google.com/maps/search/?api=1&query=Katathani+Phuket+Beach+Resort"
+    },
+    {
+        "תאריך": "30/05",
+        "מקום": "Central Phuket & טיסה",
+        "פעילות": "שופינג ופרידה מתאילנד",
+        "על המלון": "צ'ק-אאוט מ-Katathani (אפשר להשאיר מזוודות בשמירת חפצים).",
+        "מה עושים": "יום שופינג מרוכז ב-Central Phuket Floresta. כל המותגים, קומת אוכל עצומה ואקווריום. משם נסיעה של שעה לשדה התעופה לטיסה של 22:30. לא לשכוח להגיע לשדה 3 שעות לפני!",
+        "כתובת": "Vichitsongkram Rd, Phuket",
+        "ניווט": "https://www.google.com/maps/search/?api=1&query=Central+Phuket+Floresta"
+    }
 ]
 
 df = pd.DataFrame(data)
 
-# --- ממשק חיפוש ---
-st.title("🗺️ המדריך המשפחתי לתאילנד")
-search_query = st.text_input("חפשו משהו (מפל, שופינג, מלון)...")
+# --- תצוגת האפליקציה ---
+st.title("🗺️ תאילנד 2026: המדריך המשפחתי")
 
-if search_query:
-    filtered_df = df[df['מקום'].str.contains(search_query, case=False, na=False) | df['פעילות'].str.contains(search_query, case=False, na=False)]
+mode = st.radio("בחר תצוגה:", ["היום הנוכחי", "הלו\"ז המלא"], horizontal=True)
+
+if mode == "היום הנוכחי":
+    selected_date = st.selectbox("לאיזה יום תרצו לראות פירוט?", df["תאריך"].tolist())
+    row = df[df["תאריך"] == selected_date].iloc[0]
+    
+    st.markdown(f"### 📍 {row['מקום']}")
+    
+    st.markdown('<div class="section-header">🏨 על המלון</div>', unsafe_allow_html=True)
+    st.write(row['על המלון'])
+    
+    st.markdown('<div class="section-header">🛶 מה עושים היום?</div>', unsafe_allow_html=True)
+    st.write(row['מה עושים'])
+    
+    st.markdown("---")
+    st.code(f"כתובת: {row['כתובת']}")
+    st.link_button("🚗 נווט ליעד", row['ניווט'])
+
 else:
-    filtered_df = df
-
-# הצגת נתונים
-mode = st.radio("תצוגה:", ["היום הנוכחי", "כל הלו\"ז"], horizontal=True)
-
-if mode == "היום הנוכחי" and not search_query:
-    selected_date = st.selectbox("בחר תאריך:", df["תאריך"].tolist())
-    day_info = df[df["תאריך"] == selected_date].iloc[0]
-    st.markdown(f"### 📍 {day_info['מקום']}")
-    st.write(f"**בלו\"ז:** {day_info['פעילות']}")
-    st.code(day_info['כתובת'], language="text")
-    st.link_button("🚗 יאללה נוסעים!", day_info['ניווט'])
-else:
-    for _, row in filtered_df.iterrows():
-        with st.expander(f"{row['תאריך']} - {row['מקום']}"):
-            st.write(f"**פעילות:** {row['פעילות']}")
-            if row['פירוט']: st.info(row['פירוט'])
-            st.code(row['כתובת'])
-            st.link_button("ניווט", row['ניווט'])
+    for _, row in df.iterrows():
+        with st.expander(f"📅 {row['תאריך']} - {row['מקום']}"):
+            st.markdown("**🏨 המלון:** " + row['על המלון'])
+            st.markdown("**🛶 הפעילות:** " + row['מה עושים'])
+            st.link_button(f"ניווט ל-{row['מקום']}", row['ניווט'])
 
 st.markdown("---")
-st.markdown("<p style='text-align: center;'>🇹🇭 קופון למי שקרא עד כאן: שייק בננה לוטי עלינו! (סתם, על אבא)</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #888;'>חופשה מהנה! אל תשכחו לשתות המון שייק מנגו 🥭</p>", unsafe_allow_html=True)
