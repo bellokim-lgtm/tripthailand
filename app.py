@@ -17,6 +17,7 @@ st.markdown("""
 
 # נתוני הטיול
 data = [
+    {"תאריך": "19/05", "מקום": "JW Marriott Khao Lak", "פעילות": "נחיתה (11:25), איסוף רכב וצ'ק-אין", "כתובת": "41/12 Moo 3, Khuk Khak, Takuapa, Phang Nga", "ניווט": "https://www.google.com/maps/search/?api=1&query=JW+Marriott+Khao+Lak+Resort"},
     {"תאריך": "20/05", "מקום": "JW Marriott Khao Lak", "פעילות": "נחיתה (11:25), איסוף רכב וצ'ק-אין", "כתובת": "41/12 Moo 3, Khuk Khak, Takuapa, Phang Nga", "ניווט": "https://www.google.com/maps/search/?api=1&query=JW+Marriott+Khao+Lak+Resort"},
     {"תאריך": "21/05", "מקום": "מפל Sai Rung + צבי ים", "פעילות": "טיול קל למפל וביקור במרכז הצבים", "כתובת": "Khuekkhak, Takua Pa District, Phang-nga", "ניווט": "https://www.google.com/maps/search/?api=1&query=Sai+Rung+Waterfall+Khao+Lak"},
     {"תאריך": "22/05", "מקום": "La Flora Khao Lak", "פעילות": "מפל Ton Chong Fa ומעבר מלון", "כתובת": "59/1 Moo 5, Khuk Khak, Takua Pa, Phang Nga", "ניווט": "https://www.google.com/maps/search/?api=1&query=La+Flora+Khao+Lak"},
