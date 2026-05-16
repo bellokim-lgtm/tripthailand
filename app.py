@@ -49,13 +49,13 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# כותרת ראשית
-st.title("פוקט וקאו לאק")
+# כותרת ראשית חדשה עם תאריכי הטיול
+st.title("פוקט וקאו לאק | 20/05–30/05")
 
-# קופסת מפה כללית בראש העמוד
+# קופסת מפה כללית עם כותרת מעודכנת
 st.markdown("""
     <div class="map-box">
-        <h3>🗺️ כל המקומות השמורים על גבי המפה</h3>
+        <h3>🗺️ מפת המסלול המלאה שלכם</h3>
         <p>לנוחיותכם, ריכזנו את כל הנקודות, המלונות והאטרקציות של הטיול על גבי מפה אחת משותפת בגוגל מאפס.</p>
     </div>
 """, unsafe_allow_html=True)
@@ -65,7 +65,7 @@ st.markdown("---")
 # הגדרת תאריכים קבועים
 start_date = date(2026, 5, 20)
 end_start_date = date(2026, 5, 29)
-end_date = date(2026, 5, 31)
+end_date = date(2026, 5, 30)
 
 # נתוני המסלול
 itinerary = [
@@ -172,41 +172,4 @@ itinerary = [
         "description": "המפרץ המפורסם השוכן בין פוקט לקראבי, מלא במאות איי גיר קטנים היוצאים מתוך המים. ברשימה שלך מופיע האי קו לאו בילה, המוכר כחלק מאי קו הונג (Ko Hong) - אי חלומי עם לגונה פנימית מדהימה.",
         "target_name": "Ko Lao Bile",
         "map_url": "https://www.google.com/maps/search/?api=1&query=Ko+Lao+Bile",
-        "activities": [
-            "שייט בסירה מהירה או סירת לונגטייל בין איי המפרץ והאיים ששמרת.",
-            "חתירה בקיאקים בלגונה הנסתרת של קו הונג ושחייה במים הצלולים."
-        ]
-    },
-    {
-        "stage": "תחנה 5: סיום יוקרתי ומפנק",
-        "title": "חוף קאטה נוי",
-        "date_display": f"📅 תאריכים: {end_start_date.strftime('%d/%m/%Y')} עד {end_date.strftime('%d/%m/%Y')}",
-        "description": "הקטאטאני הוא אחד הריזורטים המבוקשים והמפנקים ביותר בדרום פוקט. הוא יושב על רצועת החוף המדהימה של קאטה נוי (חוף עם חול רך ומים שקטים) ומציע חווית חופש מושלמת לסגור איתה את הטיול.",
-        "target_name": "Katathani Phuket Beach Resort",
-        "map_url": "https://www.google.com/maps/search/?api=1&query=Katathani+Phuket+Beach+Resort",
-        "activities": [
-            "נופש בטן-גב מוחלט בבריכות הריזורט המתוחות לאורך קו החוף.",
-            "ארוחת ערב חגיגית מול השקיעה באחת ממסעדות הדגים המקומיות באזור קאטה."
-        ]
-    }
-]
-
-# הרצת הלו"ז והצגתו
-for item in itinerary:
-    st.markdown(f"""
-    <div class="itinerary-card">
-        <span class="stage-tag">{item['stage']}</span>
-        <div class="date-badge">{item['date_display']}</div>
-        <h3>📍 {item['title']}</h3>
-        <p style="color: #444;">{item['description']}</p>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    st.markdown(f"**🎯 יעד ניווט:** {item['target_name']}")
-    st.link_button("🧭 לחצי כאן לניווט והגעה למקום (Google Maps)", item['map_url'], type="primary")
-    
-    st.markdown("**🗺️ מה עושים כאן:**")
-    for act in item['activities']:
-        st.markdown(f"* {act}")
-        
-    st.write("---")
+        "activities":
