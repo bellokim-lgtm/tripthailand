@@ -28,10 +28,10 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# כותרת ראשית (ללא הדגל, מעודכנת לפוקט וקאו לאק)
-st.title("מסלול הטיול המעודכן שלך - פוקט וקאו לאק")
+# כותרת ראשית מעודכנת ומקוצרת
+st.title("פוקט וקאו לאק")
 
-# נתוני המסלול המדויקים מהמפות שלך
+# נתוני המסלול המדויקים
 itinerary = [
     {
         "stage": "תחנה 1: נחיתה והתאוששות (צפון פוקט)",
@@ -91,9 +91,8 @@ itinerary = [
     }
 ]
 
-# הרצת הלו"ז והצגתו בצורה בטוחה בלי לשבור HTML
+# הרצת הלו"ז והצגתו
 for item in itinerary:
-    # פתיחת התיבה המעוצבת
     st.markdown(f"""
     <div class="itinerary-card">
         <span class="stage-tag">{item['stage']}</span>
@@ -102,10 +101,9 @@ for item in itinerary:
     </div>
     """, unsafe_allow_html=True)
     
-    # הצגת היעד, יצירת כפתור הניווט הרשמי של Streamlit, והפעילויות בנפרד
-    st.markdown(f"**🎯 יעד ניווט:** {item['target_name']}", help="לחצי על הכפתור למטה כדי לפתוח ניווט")
+    st.markdown(f"**🎯 יעד ניווט:** {item['target_name']}")
     
-    # יצירת קישור ניווט אוטומטי ונקי שמתאים לגוגל מאפס ולמכשירים ניידים
+    # כפתור הניווט הייעודי של Streamlit
     navigation_url = f"https://www.google.com/maps/search/?api=1&query={item['map_search_query']}"
     st.link_button("🧭 לחצי כאן לניווט והגעה למקום (Google Maps)", navigation_url, type="primary")
     
@@ -113,5 +111,4 @@ for item in itinerary:
     for act in item['activities']:
         st.markdown(f"* {act}")
         
-    # קו מפריד ויזואלי נקי בין התחנות
     st.write("---")
