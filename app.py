@@ -46,6 +46,16 @@ st.markdown("""
         margin-bottom: 10px;
         direction: rtl;
     }
+    .tip-box {
+        background-color: #fff3cd;
+        color: #856404;
+        padding: 10px;
+        border-radius: 8px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        font-weight: bold;
+        border-right: 4px solid #ffeeba;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -67,7 +77,7 @@ start_date = date(2026, 5, 20)
 end_start_date = date(2026, 5, 29)
 end_date = date(2026, 5, 30)
 
-# נתוני המסלול המעודכנים והנקיים ללא שאריות HTML
+# נתוני המסלול המעודכנים עם טיפי קרבה ומרחקים
 itinerary = [
     {
         "stage": "תחנה 1: נחיתה והתאוששות",
@@ -85,7 +95,7 @@ itinerary = [
         "stage": "תחנה 2: קאו לאק - לינה מרכזית",
         "title": "ריזורט ג'יי דבליו מריוט קאו לאק",
         "date_display": "📅 מהלך הטיול: 21/05 עד 28/05",
-        "description": "ריזורט מפואר ברמה גבוהה מאוד המפורסם בזכות בריכת הלגונה הענקית שלו שנמתחת לאורך כל המלון, חדרים עם גישה ישירה למים וחוף חול לבן פרטי ושקט.",
+        "description": "ריזורט מפואר ברמה גבוהה מאוד המפורסם בזכות בריכת הלגונה הענקית שלו שנמתחת לאורך כל המלון, חדרים עם גישה ישירה למים וחוף חול לבן פרטי ושקט. מכאן תצאו לרוב האטרקציות בחלק המרכזי של החופשה.",
         "target_name": "JW Marriott Khao Lak Resort & Spa",
         "map_url": "https://www.google.com/maps/search/?api=1&query=JW+Marriott+Khao+Lak+Resort+Spa",
         "activities": [
@@ -100,6 +110,7 @@ itinerary = [
         "description": "אחד מאתרי הטבע היפים ביותר בתאילנד. יער גשם עתיק, צוקי גיר עצומים המתנשאים מעל המים, ומגוון בעלי חיים. גולת הכותרת היא אגם צ'אורלאן שבו מומלץ לקחת שייט בסירה ארוכת זנב.",
         "target_name": "Khao Sok National Park",
         "map_url": "https://www.google.com/maps/search/?api=1&query=Khao+Sok+National+Park",
+        "proximity_tip": "🚗 טיפ מרחק: קאו סוק נמצאת במרחק של כשעה וחצי נסיעה (לכיוון) ממלונות קאו לאק (כמו ה-JW Marriott). מומלץ לצאת מוקדם בבוקר כטיול יום ארוך או לשלב עם מעבר מנוחת הג'ונגל.",
         "activities": [
             "שייט בין צוקי הגיר המפורסמים באגם צ'אורלאן.",
             "טיול רגלי בג'ונגל וביקור במערות נטיפים נסתרות."
@@ -121,7 +132,7 @@ itinerary = [
         "stage": "תחנה 4: קאו לאק - אופציה ללינה חלופית 2",
         "title": "מלון דה ליטל שור",
         "date_display": "📅 מהלך הטיול: 21/05 עד 28/05",
-        "description": "מלון בוטיק יוקרתי, חדיש ומודרני המציע חווית אירוח אינטימית, שירות מוקפד ואישי, ועיצוב אדריכלי נקי ומרגיע מול רצועת החוף.",
+        "description": "מלון בוטיק יוקרתי, חדיש וממודרני המציע חווית אירוח אינטימית, שירות מוקפד ואישי, ועיצוב אדריכלי נקי ומרגיע מול רצועת החוף.",
         "target_name": "The Little Shore Khao Lak by Katathani",
         "map_url": "https://www.google.com/maps/search/?api=1&query=The+Little+Shore+Khao+Lak+by+Katathani",
         "activities": [
@@ -148,6 +159,7 @@ itinerary = [
         "description": "בריכה טבעית מדהימה ביופייה הנובעת בלב שמורת טבע מוגנת ביער הגשם. המים הבהירים והצלולים מקבלים גוון ירוק-טורקיז מהפנט בגלל השתקפות המינרלים והטבע מסביב.",
         "target_name": "Emerald Pool (Sa Morakot)",
         "map_url": "https://www.google.com/maps/search/?api=1&query=Emerald+Pool+Sa+Morakot+Thailand",
+        "proximity_tip": "⚠️ שימו לב למרחק: בריכת האזמרגד נמצאת באזור קראבי. המשמעות היא נסיעה ארוכה של כשעתיים וחצי עד שלוש שעות לכל כיוון מקאו לאק. מומלץ לעשות זאת רק אם אתם מוכנים ליום נסיעות שלם, או לשלב את זה ביום המעבר דרומה לפוקט!",
         "activities": [
             "הליכה במסלול מסודר ופסטורלי בתוך יער הגשם המוביל אל הבריכה.",
             "שחייה מרעננת במים הצלולים והחמימים של בריכת הטורקיז."
@@ -160,6 +172,7 @@ itinerary = [
         "description": "ביקור במפלי המים המפורסמים והמרעננים של החבל. מפל סאי רונג הוא מפל נגיש ויפהפה שנופל לבריכה טבעית, ומפל טון צ'ונג פה מציע חמישה מפלסים מדהימים בלב היער.",
         "target_name": "Ton Chong Fa & Sai Rung Waterfalls",
         "map_url": "https://www.google.com/maps/search/?api=1&query=Ton+Chong+Fa+Waterfall",
+        "proximity_tip": "📍 טיפ מרחק: המפלים האלו קרובים במיוחד! מפל סאי רונג ומפל טון צ'ונג פה נמצאים במרחק של 15 עד 25 דקות נסיעה בלבד מריזורט ה-JW Marriott וממלונות קאו לאק. אטרקציה מושלמת וקלילה לחצי יום.",
         "activities": [
             "רחצה מרעננת בבריכת המים הטבעית למרגלות מפל סאי רונג.",
             "טיול הליכה קל בג'ונגל בין המפלסים של מפל טון צ'ונג פה."
@@ -172,6 +185,7 @@ itinerary = [
         "description": "המפרץ המפורסם השוכן בין פוקט לקראבי, מלא במאות איי גיר קטנים היוצאים מתוך המים. ברשימה מופיע האי קו לאו בילה, המוכר כחלק מאי קו הונג - אי חלומי עם לגונה פנימית מדהימה.",
         "target_name": "Ko Lao Bile",
         "map_url": "https://www.google.com/maps/search/?api=1&query=Ko+Lao+Bile",
+        "proximity_tip": "🚤 טיפ מרחק: נקודת היציאה לשייט במפרץ פאנג נגה (כמו מעגן הסירות של סאמאצ'ה) נמצאת במרחק של כ-45 דקות עד שעה נסיעה דרומית לקאו לאק. זהו מיקום מצוין ונוח מאוד לטיול יום באמצע השבוע שלכם.",
         "activities": [
             "שייט בסירה מהירה או סירת לונגטייל בין איי המפרץ.",
             "חתירה בקיאקים בלגונה הנסתרת של קו הונג ושחייה במים הצלולים."
@@ -201,6 +215,10 @@ for item in itinerary:
         <p style="color: #444;">{item['description']}</p>
     </div>
     """, unsafe_allow_html=True)
+    
+    # הצגת טיפ המרחק/קרבה במידה וקיים
+    if "proximity_tip" in item:
+        st.markdown(f"""<div class="tip-box">{item['proximity_tip']}</div>""", unsafe_allow_html=True)
     
     st.markdown(f"**🎯 יעד ניווט:** {item['target_name']}")
     st.link_button("🧭 לחצי כאן לניווט והגעה למקום (Google Maps)", item['map_url'], type="primary")
