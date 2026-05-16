@@ -169,3 +169,15 @@ for item in itinerary:
         <h3>📍 {item['title']}</h3>
         <p style="color: #444;">{item['description']}</p>
     </div>
+    """, unsafe_allow_html=True)
+    
+    st.markdown(f"**🎯 יעד ניווט:** {item['target_name']}")
+    
+    # כפתור הניווט הייעודי עם הקישור הייחודי לו
+    st.link_button("🧭 לחצי כאן לניווט והגעה למקום (Google Maps)", item['map_url'], type="primary")
+    
+    st.markdown("**🗺️ מה עושים כאן:**")
+    for act in item['activities']:
+        st.markdown(f"* {act}")
+        
+    st.write("---")
