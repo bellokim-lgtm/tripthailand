@@ -86,7 +86,7 @@ start_date = date(2026, 5, 20)
 end_start_date = date(2026, 5, 29)
 end_date = date(2026, 5, 30)
 
-# נתוני המסלול המעודכנים עם אנגלית וקישור Koh Hong
+# נתוני המסלול המעודכנים עם הפרדת המפלים לקטגוריות נפרדות
 itinerary = [
     {
         "stage": "תחנה 1: נחיתה והתאוששות",
@@ -176,64 +176,19 @@ itinerary = [
     },
     {
         "stage": "תחנה 4: אטרקציית טבע בקאו לאק",
-        "title": "מפלי המים של קאו לאק | Khao Lak Waterfalls",
+        "title": "מפל סאי רונג | Sai Rung Waterfall",
         "date_display": "📅 מהלך הטיול: 21/05 עד 28/05",
-        "description": "ביקור במפלי המים המפורסמים והמרעננים של החבל. מפל סאי רונג הוא מפל נגיש ויפהפה שנופל לבריכה טבעית, ומפל טון צ'ונג פה מציע חמישה מפלסים מדהימים בלב היער.",
-        "target_name": "Ton Chong Fa & Sai Rung Waterfalls",
+        "description": "מפל מים יפהפה, מרענן ונגיש במיוחד בקאו לאק. המים נופלים מגובה אל תוך בריכה טבעית קסומה המוקפת בצמחייה טרופית עשירה, בה ניתן להשתכשך בכיף. המקום נוח מאוד להגעה ללא צורך בהליכה מאומצת.",
+        "target_name": "Sai Rung Waterfall",
         "map_url": "https://www.google.com/maps/search/?api=1&query=Ton+Chong+Fa+Waterfall",
-        "proximity_tip": "📍 טיפ מרחק: המפלים האלו קרובים במיוחד! מפל סאי רונג ומפל טון צ'ונג פה נמצאים במרחק של 15 עד 25 דקות נסיעה בלבד מריזורט ה-JW Marriott וממלונות קאו לאק. אטרקציה מושלמת וקלילה לחצי יום.",
+        "proximity_tip": "📍 טיפ מרחק: קרוב מאוד! מפל סאי רונג נמצא במרחק של פחות מ-15 דקות נסיעה מריזורט ה-JW Marriott. אידיאלי לעצירה ספונטנית וקלילה.",
         "activities": [
-            "רחצה מרעננת בבריכת המים הטבעית למרגלות מפל סאי רונג.",
-            "טיול הליכה קל בג'ונגל בין המפלסים של מפל טון צ'ונג פה."
+            "רחצה מרעננת בבריכת המים הטבעית למרגלות המפל.",
+            "נהנים מהאווירה והטבע השקט מסביב."
         ]
     },
     {
-        "stage": "תחנה 4: שייט במפרץ האיים",
-        "title": "איי הונג | Koh Hong",
+        "stage": "תחנה 4: אטרקציית טבע בקאו לאק",
+        "title": "מפל טון צ'ונג פה | Ton Chong Fa Waterfall",
         "date_display": "📅 מהלך הטיול: 21/05 עד 28/05",
-        "description": "קבוצת איים חלומית ומפורסמת ביופייה, המהווה חלק מהפארק הלאומי של מחוז קראבי. האי המרכזי מציע לגונה פנימית נסתרת ומרהיבה אליה נכנסים דרך פתח צר בצוקים, לצד חוף עם חול לבן ורך ומים צלולים לחלוטין המושלמים לשנורקלינג.",
-        "target_name": "Koh Hong (Hong Islands)",
-        "map_url": "https://www.google.com/maps/search/?api=1&query=Ko+Lao+Bile",
-        "proximity_tip": "🚤 טיפ מרחק: נקודת היציאה לשייט במפרץ פאנג נגה ובדרך לאיי הונג נמצאת במרחק של כ-45 דקות עד שעה נסיעה דרומית לקאו לאק. זוהי נקודה פנטסטית ליום שייט חוויתי ומלא בנופים בלתי נשכחים.",
-        "activities": [
-            "שייט בסירה מהירה או סירת לונגטייל והגעה לחופים הלבנים של Koh Hong.",
-            "כניסה אל הלגונה הנסתרת והמדהימה בלב האי, חתירה בקיאקים ושנורקלינג עם דגים צבעוניים."
-        ]
-    },
-    {
-        "stage": "תחנה 5: סיום יוקרתי ומפנק",
-        "title": "חוף קאטה נוי | Kata Noi Beach",
-        "date_display": f"📅 תאריכים: {end_start_date.strftime('%d/%m/%Y')} עד {end_date.strftime('%d/%m/%Y')}",
-        "description": "הקטאטאני הוא אחד הריזורטים המבוקשים והמפנקים ביותר בדרום פוקט. הוא יושב על רצועת החוף המדהימה של קאטה נוי ומציע חווית חופש מושלמת, רגועה ויוקרתית לסגור איתה את הטיול.",
-        "target_name": "Katathani Phuket Beach Resort",
-        "map_url": "https://www.google.com/maps/search/?api=1&query=Katathani+Phuket+Beach+Resort",
-        "activities": [
-            "נופש בטן-גב מוחלט בבריכות הריזורט המתוחות לאורך קו החוף.",
-            "ארוחת ערב חגיגית מול השקיעה באחת ממסעדות האזור."
-        ]
-    }
-]
-
-# הרצת הלו"ז והצגתו
-for item in itinerary:
-    st.markdown(f"""
-    <div class="itinerary-card">
-        <span class="stage-tag">{item['stage']}</span>
-        <div class="date-badge">{item['date_display']}</div>
-        <h3>📍 {item['title']}</h3>
-        <p style="color: #444;">{item['description']}</p>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    # הצגת טיפ המרחק/קרבה במידה וקיים
-    if "proximity_tip" in item:
-        st.markdown(f"""<div class="tip-box">{item['proximity_tip']}</div>""", unsafe_allow_html=True)
-    
-    st.markdown(f"**🎯 יעד ניווט:** {item['target_name']}")
-    st.link_button("🧭 לחצי כאן לניווט והגעה למקום (Google Maps)", item['map_url'], type="primary")
-    
-    st.markdown("**🗺️ מה עושים כאן:**")
-    for act in item['activities']:
-        st.markdown(f"* {act}")
-        
-    st.write("---")
+        "description": "מפל מרשים וגדול יותר השוכן בתוך שטח הפארק הלאומי. המפל מורכב מ-5 מפלסים מדהימים המסתתרים עמוק בתוך יער הגשם, ומציע חווית טיול קצת יותר הרפתקנית הכוללת ה
