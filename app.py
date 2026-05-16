@@ -49,10 +49,10 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# כותרת ראשית חדשה עם תאריכי הטיול
+# כותרת ראשית עם תאריכי הטיול
 st.title("פוקט וקאו לאק | 20/05–30/05")
 
-# קופסת מפה כללית עם כותרת מעודכנת
+# קופסת מפה כללית בראש העמוד
 st.markdown("""
     <div class="map-box">
         <h3>🗺️ מפת המסלול המלאה שלכם</h3>
@@ -67,13 +67,13 @@ start_date = date(2026, 5, 20)
 end_start_date = date(2026, 5, 29)
 end_date = date(2026, 5, 30)
 
-# נתוני המסלול
+# נתוני המסלול המעודכנים והנקיים ללא שאריות HTML
 itinerary = [
     {
         "stage": "תחנה 1: נחיתה והתאוששות",
         "title": "חוף נייטון השקט והפסטורלי",
         "date_display": f"📅 תאריך: {start_date.strftime('%d/%m/%Y')}",
-        "description": "מלון מעולה שנמצא דקות ספורות משדה התעופה של פוקט. בחירה מושלמת ללילה הראשון כדי לנחות, לקבל צ'ק-אין מהיר, לנוח מהטיסה הארוכה וליהנות מחוף נייטון (Naithon Beach) השקט והנקי.",
+        "description": "מלון מעולה שנמצא דקות ספורות משדה התעופה של פוקט. בחירה מושלמת ללילה הראשון כדי לנחות, לקבל צ'ק-אין מהיר, לנוח מהטיסה הארוכה וליהנות מחוף נייטון (Naithon Beach) שנחשב לאחד החופים השקטים והנקיים באי.",
         "target_name": "Wyndham Garden Naithon Phuket",
         "map_url": "https://www.google.com/maps/search/?api=1&query=Wyndham+Garden+Naithon+Phuket",
         "activities": [
@@ -89,7 +89,7 @@ itinerary = [
         "target_name": "JW Marriott Khao Lak Resort & Spa",
         "map_url": "https://www.google.com/maps/search/?api=1&query=JW+Marriott+Khao+Lak+Resort+Spa",
         "activities": [
-            "פינוק מוחלט במתחם הספא והבריכות מהארוכות באסיה.",
+            "פינוק במתחם הספא ובבריכות מהארוכות באסיה.",
             "מנוחה ובטן-גב על קו החוף השליו של קאו לאק."
         ]
     },
@@ -109,7 +109,7 @@ itinerary = [
         "stage": "תחנה 4: קאו לאק - אופציה ללינה חלופית 1",
         "title": "ריזורט קאו לאק מרלין",
         "date_display": "📅 מהלך הטיול: 21/05 עד 28/05",
-        "description": "ריזורט מדהים המעוצב ממש כמו ג'ונגל טרופי עשיר עם חיות בר, צמחייה עבותה ומפלים פנימיים, ומציע שילוב מושלם בין נוחות ממודרנית לטבע פראי על שפת הים.",
+        "description": "ריזורט מדהים המעוצב ממש כמו ג'ונגל טרופי עשיר עם חיות בר, צמחייה עבותה ומפלים פנימיים, ומציע שילוב מושלם בין נוחות מודרנית לטבע פראי על שפת הים.",
         "target_name": "Khaolak Merlin Resort",
         "map_url": "https://www.google.com/maps/search/?api=1&query=Khaolak+Merlin+Resort",
         "activities": [
@@ -121,7 +121,7 @@ itinerary = [
         "stage": "תחנה 4: קאו לאק - אופציה ללינה חלופית 2",
         "title": "מלון דה ליטל שור",
         "date_display": "📅 מהלך הטיול: 21/05 עד 28/05",
-        "description": "מלון בוטיק יוקרתי, חדיש וממודרני המציע חווית אירוח אינטימית, שירות מוקפד ואישי, ועיצוב אדריכלי נקי ומרגיע מול רצועת החוף.",
+        "description": "מלון בוטיק יוקרתי, חדיש ומודרני המציע חווית אירוח אינטימית, שירות מוקפד ואישי, ועיצוב אדריכלי נקי ומרגיע מול רצועת החוף.",
         "target_name": "The Little Shore Khao Lak by Katathani",
         "map_url": "https://www.google.com/maps/search/?api=1&query=The+Little+Shore+Khao+Lak+by+Katathani",
         "activities": [
@@ -143,21 +143,21 @@ itinerary = [
     },
     {
         "stage": "תחנה 4: אופציה לטיול יום - בריכת האזמרגד",
-        "title": "בריכת האזמרגד (Emerald Pool / Sa Morakot)",
+        "title": "בריכת האזמרגד (Emerald Pool)",
         "date_display": "📅 מהלך הטיול: 21/05 עד 28/05",
-        "description": "בריכה טבעית מדהימה ביופייה הנובעת בלב שמורת טבע מוגנת ביער הגשם. המים הבהירים והצלולים מקבלים גוון ירוק-טורקיז (אזמרגד) מהפנט בגלל השתקפות המינרלים והטבע מסביב. מקום מושלם לחובבי טבע ושחייה מרעננת.",
+        "description": "בריכה טבעית מדהימה ביופייה הנובעת בלב שמורת טבע מוגנת ביער הגשם. המים הבהירים והצלולים מקבלים גוון ירוק-טורקיז מהפנט בגלל השתקפות המינרלים והטבע מסביב.",
         "target_name": "Emerald Pool (Sa Morakot)",
         "map_url": "https://www.google.com/maps/search/?api=1&query=Emerald+Pool+Sa+Morakot+Thailand",
         "activities": [
             "הליכה במסלול מסודר ופסטורלי בתוך יער הגשם המוביל אל הבריכה.",
-            "שחייה מרעננת במים הצלולים והחמימים של בריכת הטורקיז הטבעית."
+            "שחייה מרעננת במים הצלולים והחמימים של בריכת הטורקיז."
         ]
     },
     {
         "stage": "תחנה 4: אטרקציית טבע בקאו לאק",
         "title": "מפלי המים של קאו לאק",
         "date_display": "📅 מהלך הטיול: 21/05 עד 28/05",
-        "description": "ביקור במפלי המים המפורסמים והמרעננים של החבל. מפל סאי רונג (Sai Rung) הוא מפל נגיש ויפהפה שנופל לבריכה טבעית, ומפל טון צ'ונג פה (Ton Chong Fa) מציע חמישה מפלסים מדהימים בלב היער.",
+        "description": "ביקור במפלי המים המפורסמים והמרעננים של החבל. מפל סאי רונג הוא מפל נגיש ויפהפה שנופל לבריכה טבעית, ומפל טון צ'ונג פה מציע חמישה מפלסים מדהימים בלב היער.",
         "target_name": "Ton Chong Fa & Sai Rung Waterfalls",
         "map_url": "https://www.google.com/maps/search/?api=1&query=Ton+Chong+Fa+Waterfall",
         "activities": [
@@ -169,7 +169,44 @@ itinerary = [
         "stage": "תחנה 4: שייט במפרץ האיים",
         "title": "מפרץ פאנג נגה ואיי קוטה",
         "date_display": "📅 מהלך הטיול: 21/05 עד 28/05",
-        "description": "המפרץ המפורסם השוכן בין פוקט לקראבי, מלא במאות איי גיר קטנים היוצאים מתוך המים. ברשימה שלך מופיע האי קו לאו בילה, המוכר כחלק מאי קו הונג (Ko Hong) - אי חלומי עם לגונה פנימית מדהימה.",
+        "description": "המפרץ המפורסם השוכן בין פוקט לקראבי, מלא במאות איי גיר קטנים היוצאים מתוך המים. ברשימה מופיע האי קו לאו בילה, המוכר כחלק מאי קו הונג - אי חלומי עם לגונה פנימית מדהימה.",
         "target_name": "Ko Lao Bile",
         "map_url": "https://www.google.com/maps/search/?api=1&query=Ko+Lao+Bile",
-        "activities":
+        "activities": [
+            "שייט בסירה מהירה או סירת לונגטייל בין איי המפרץ.",
+            "חתירה בקיאקים בלגונה הנסתרת של קו הונג ושחייה במים הצלולים."
+        ]
+    },
+    {
+        "stage": "תחנה 5: סיום יוקרתי ומפנק",
+        "title": "חוף קאטה נוי",
+        "date_display": f"📅 תאריכים: {end_start_date.strftime('%d/%m/%Y')} עד {end_date.strftime('%d/%m/%Y')}",
+        "description": "הקטאטאני הוא אחד הריזורטים המבוקשים והמפנקים ביותר בדרום פוקט. הוא יושב על רצועת החוף המדהימה של קאטה נוי ומציע חווית חופש מושלמת, רגועה ויוקרתית לסגור איתה את הטיול.",
+        "target_name": "Katathani Phuket Beach Resort",
+        "map_url": "https://www.google.com/maps/search/?api=1&query=Katathani+Phuket+Beach+Resort",
+        "activities": [
+            "נופש בטן-גב מוחלט בבריכות הריזורט המתוחות לאורך קו החוף.",
+            "ארוחת ערב חגיגית מול השקיעה באחת ממסעדות האזור."
+        ]
+    }
+]
+
+# הרצת הלו"ז והצגתו
+for item in itinerary:
+    st.markdown(f"""
+    <div class="itinerary-card">
+        <span class="stage-tag">{item['stage']}</span>
+        <div class="date-badge">{item['date_display']}</div>
+        <h3>📍 {item['title']}</h3>
+        <p style="color: #444;">{item['description']}</p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    st.markdown(f"**🎯 יעד ניווט:** {item['target_name']}")
+    st.link_button("🧭 לחצי כאן לניווט והגעה למקום (Google Maps)", item['map_url'], type="primary")
+    
+    st.markdown("**🗺️ מה עושים כאן:**")
+    for act in item['activities']:
+        st.markdown(f"* {act}")
+        
+    st.write("---")
