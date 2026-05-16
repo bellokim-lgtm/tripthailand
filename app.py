@@ -4,7 +4,7 @@ from datetime import date
 # הגדרות עמוד
 st.set_page_config(page_title="המדריך המלא - 2026", layout="centered")
 
-# עיצוב קופסאות הלו"ז (CSS)
+# עיצוב קופסאות הלו"ז והמפה הכללית (CSS)
 st.markdown("""
     <style>
     h1, h3, h2 { text-align: right; direction: rtl; font-family: 'Assistant', sans-serif; }
@@ -18,6 +18,15 @@ st.markdown("""
         direction: rtl;
         text-align: right;
         box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .map-box {
+        background-color: #e6f2f2;
+        padding: 20px;
+        border-radius: 12px;
+        border: 2px dashed #008080;
+        margin-bottom: 30px;
+        direction: rtl;
+        text-align: right;
     }
     .stage-tag {
         color: #008080;
@@ -42,6 +51,16 @@ st.markdown("""
 
 # כותרת ראשית
 st.title("פוקט וקאו לאק")
+
+# קופסת מפה כללית בראש העמוד
+st.markdown("""
+    <div class="map-box">
+        <h3>🗺️ כל המקומות השמורים על גבי המפה</h3>
+        <p>לנוחיותכם, ריכזנו את כל הנקודות, המלונות והאטרקציות של הטיול על גבי מפה אחת משותפת בגוגל מאפס.</p>
+    </div>
+""", unsafe_allow_html=True)
+st.link_button("🌐 לחצו כאן לצפייה במפת הטיול המלאה", "https://www.google.com/maps/@8.3930358,99.4133095,9z/data=!4m6!1m2!10m1!1e1!11m2!2s8ZZz-WLQADbBj2BVs94Z9UkoKTzh0w!3e8?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D", type="primary")
+st.markdown("---")
 
 # הגדרת תאריכים קבועים
 start_date = date(2026, 5, 20)
