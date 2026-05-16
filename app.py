@@ -4,11 +4,20 @@ from datetime import date
 # הגדרות עמוד
 st.set_page_config(page_title="המדריך המלא - 2026", layout="centered")
 
-# עיצוב קופסאות הלו"ז והמפה הכללית (CSS)
+# עיצוב קופסאות הלו"ז, המפה ותיקון זרימת הטבעת (CSS)
 st.markdown("""
     <style>
     h1, h3, h2 { text-align: right; direction: rtl; font-family: 'Assistant', sans-serif; }
-    p, li { text-align: right; direction: rtl; font-size: 16px; line-height: 1.6; }
+    
+    /* תיקון קריטי לסידור הטקסט, הסוגריים והשילוב של עברית ואנגלית */
+    p, li, .tip-box { 
+        text-align: right; 
+        direction: rtl; 
+        font-size: 16px; 
+        line-height: 1.6;
+        unicode-bidi: plaintext;
+    }
+    
     .itinerary-card {
         background-color: #f9f9f9;
         padding: 20px;
@@ -77,7 +86,7 @@ start_date = date(2026, 5, 20)
 end_start_date = date(2026, 5, 29)
 end_date = date(2026, 5, 30)
 
-# נתוני המסלול המעודכנים עם טיפי קרבה ומרחקים
+# נתוני המסלול המעודכנים
 itinerary = [
     {
         "stage": "תחנה 1: נחיתה והתאוששות",
@@ -132,7 +141,7 @@ itinerary = [
         "stage": "תחנה 4: קאו לאק - אופציה ללינה חלופית 2",
         "title": "מלון דה ליטל שור",
         "date_display": "📅 מהלך הטיול: 21/05 עד 28/05",
-        "description": "מלון בוטיק יוקרתי, חדיש וממודרני המציע חווית אירוח אינטימית, שירות מוקפד ואישי, ועיצוב אדריכלי נקי ומרגיע מול רצועת החוף.",
+        "description": "מלון בוטיק יוקרתי, חדיש ומודרני המציע חווית אירוח אינטימית, שירות מוקפד ואישי, ועיצוב אדריכלי נקי ומרגיע מול רצועת החוף.",
         "target_name": "The Little Shore Khao Lak by Katathani",
         "map_url": "https://www.google.com/maps/search/?api=1&query=The+Little+Shore+Khao+Lak+by+Katathani",
         "activities": [
